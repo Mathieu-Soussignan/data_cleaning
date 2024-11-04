@@ -3,6 +3,8 @@ import streamlit as st
 
 # 1. Titre de l'application
 st.title("Nettoyage des données du dataset Housing Price")
+st.image("./assets/data_scientist.png", caption=" Housing Price !", use_column_width=True)
+
 
 # 2. Chargement des données
 data_url = "https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/datasets/regression/housing-price_train.csv"
