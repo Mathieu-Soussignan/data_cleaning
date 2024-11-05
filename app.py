@@ -3,7 +3,7 @@ import streamlit as st
 
 # Création d'un Dashboard multi-pages avec Streamlit
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Aller à", ["Aperçu des données", "Nettoyage des valeurs manquantes", "Analyse exploratoire", "Téléchargement des données nettoyées"])
+page = st.sidebar.radio("Aller à", ["Aperçu des données", "Nettoyage des valeurs manquantes", "Téléchargement des données nettoyées"])
 
 # 1. Aperçu des données
 if page == "Aperçu des données":
@@ -60,34 +60,7 @@ elif page == "Nettoyage des valeurs manquantes":
     st.subheader("Valeurs manquantes restantes après imputation")
     st.write(data.isnull().sum())
 
-# 3. Analyse exploratoire
-elif page == "Analyse exploratoire":
-    st.title("Analyse exploratoire des données")
-    
-    # Chargement des données nettoyées
-    data_url = "https://filedn.eu/lefeldrXcsSFgCcgc48eaLY/datasets/regression/housing-price_train.csv"
-    data = pd.read_csv(data_url)
-    data = data.drop("Id", axis='columns')
-    percent_missing = data.isnull().sum() * 100 / len(data)
-    columns_to_drop = percent_missing[percent_missing > 50].index
-    data = data.drop(columns=columns_to_drop)
-    numerical_features = data.select_dtypes(include=['int64', 'float64']).columns
-    for col in numerical_features:
-        if data[col].isnull().sum() > 0:
-            data[col] = data[col].fillna(data[col].mean())
-    categorical_features = data.select_dtypes(include=['object']).columns
-    for col in categorical_features:
-        if data[col].isnull().sum() > 0:
-            data[col] = data[col].fillna(data[col].mode()[0])
-    
-    st.subheader("Description statistique des colonnes numériques")
-    st.write(data.describe())
-
-    st.subheader("Distribution des valeurs (histogramme)")
-    column_to_plot = st.selectbox("Choisir une colonne pour voir l'histogramme", numerical_features)
-    st.bar_chart(data[column_to_plot])
-
-# 4. Téléchargement des données nettoyées
+# 3. Téléchargement des données nettoyées
 elif page == "Téléchargement des données nettoyées":
     st.title("Télécharger les données nettoyées")
     
