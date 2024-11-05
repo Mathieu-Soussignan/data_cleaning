@@ -14,16 +14,12 @@ Ce projet est une application Streamlit qui permet de nettoyer et d'analyser les
    - Imputation des valeurs manquantes pour les colonnes numériques (par la moyenne) et pour les colonnes catégorielles (par la valeur la plus fréquente).
    - Affichage des valeurs manquantes à chaque étape pour assurer le suivi du nettoyage.
 
-3. **Analyse Exploratoire** :
-   - Affichage des statistiques descriptives des colonnes numériques.
-   - Visualisation de la distribution des valeurs via un histogramme interactif.
-
-4. **Téléchargement des Données Nettoyées** :
+3. **Téléchargement des Données Nettoyées** :
    - Enregistrement des données nettoyées dans un fichier CSV.
    - Possibilité de télécharger le fichier des données nettoyées directement depuis l'application.
 
 ## Prérequis
-- **Python 3.12+**
+- **Python 3.8+**
 - **Streamlit**
 - **Pandas**
 - **Seaborn** (pour les visualisations statistiques)
@@ -53,12 +49,10 @@ Cela ouvrira une application web dans votre navigateur, vous permettant de navig
 ## Structure de l'Application
 - **Aperçu des Données** : Cette page permet à l'utilisateur de visualiser les premières lignes du dataset "Housing Price" et de vérifier sa structure.
 - **Nettoyage des Valeurs Manquantes** : Cette page guide l'utilisateur dans les différentes étapes de nettoyage des valeurs manquantes.
-- **Analyse Exploratoire** : La page d'analyse exploratoire offre une analyse visuelle des données avec des histogrammes et des descriptions statistiques.
 - **Téléchargement des Données Nettoyées** : Cette page permet de sauvegarder et télécharger les données nettoyées.
 
 ## Utilisation
 1. **Navigation** : Utilisez le menu latéral pour naviguer entre les différentes pages.
-2. **Filtrage des Données** : Vous pouvez choisir une colonne spécifique pour visualiser un histogramme, vous permettant d'explorer la distribution des données.
 3. **Téléchargement** : Une fois le nettoyage terminé, vous pouvez télécharger les données nettoyées.
 
 ## Contributions
