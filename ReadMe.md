@@ -36,7 +36,7 @@ Ce projet est une application Streamlit qui permet de nettoyer et d'analyser les
    ```
 2. Accédez au dossier du projet :
    ```sh
-   cd <nom-du-dossier>
+   cd data_cleaning
    ```
 3. Installez les dépendances :
    ```sh
